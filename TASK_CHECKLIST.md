@@ -15,6 +15,4 @@
 
 ## TODO
 - [ ] Mobile App Development
-- [ ] Password Reset Flow
 - [ ] User Profile Management
-- [ ] Admin Dashboard

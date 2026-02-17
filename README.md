@@ -1,7 +1,7 @@
 # IT342_G3_Cosina
 
 ## Project Description
-This project is a web application featuring a secure backend with user authentication and a responsive frontend dashboard. It includes a Spring Boot backend and a ReactJS frontend.
+Altru is a purpose-driven donation platform built to make charitable giving more accessible and trustworthy. The application allows users to explore causes and support fundraising initiatives in a clear and organized way. The system features a ReactJS-based web application and a native Android mobile app built with Kotlin, both powered by a centralized backend service to ensure secure transactions and a consistent user experience across platforms.
 
 ## Technologies Used
 - **Backend**: Java, Spring Boot, Spring Security (JWT), Spring Data JPA, Hibernate, MySQL.
