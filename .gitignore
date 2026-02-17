@@ -1,0 +1,9 @@
+backend/target/
+backend/*.iml
+web/node_modules/
+web/dist/
+web/.env.local
+.idea/
+.vscode/
+*.log
+.DS_Store
