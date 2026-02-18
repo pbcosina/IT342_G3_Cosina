@@ -25,13 +25,14 @@ public class AuthService {
 
     public AuthResponse register(RegisterRequest request) {
         var user = new User();
-        user.setUsername(request.getUsername());
+        user.setName(request.getName());
+        user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setRole("ROLE_USER");
         repository.save(user);
 
         // Load UserDetails to pass to generateToken
-        UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
+        UserDetails userDetails = userDetailsService.loadUserByUsername(user.getEmail());
         var jwtToken = jwtService.generateToken(userDetails);
         return AuthResponse.builder().token(jwtToken).build();
     }
@@ -39,11 +40,11 @@ public class AuthService {
     public AuthResponse authenticate(AuthRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getUsername(),
+                        request.getEmail(),
                         request.getPassword()
                 )
         );
-        var userDetails = userDetailsService.loadUserByUsername(request.getUsername());
+        var userDetails = userDetailsService.loadUserByUsername(request.getEmail());
         var jwtToken = jwtService.generateToken(userDetails);
         return AuthResponse.builder().token(jwtToken).build();
     }

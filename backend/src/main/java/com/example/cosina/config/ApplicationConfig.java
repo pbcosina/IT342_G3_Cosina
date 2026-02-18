@@ -21,9 +21,9 @@ public class ApplicationConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return username -> repository.findByUsername(username)
+        return email -> repository.findByEmail(email)
                 .map(user -> org.springframework.security.core.userdetails.User.builder()
-                .username(user.getUsername())
+                .username(user.getEmail())
                 .password(user.getPassword()) // Encoded password
                 .authorities(user.getRole() != null ? user.getRole() : "ROLE_USER")
                 .build())

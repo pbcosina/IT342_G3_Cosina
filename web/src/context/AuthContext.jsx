@@ -35,9 +35,9 @@ export const AuthProvider = ({ children }) => {
     }
   }, [token]);
 
-  const login = async (username, password) => {
+  const login = async (email, password) => {
     try {
-      const response = await api.post('/auth/login', { username, password });
+      const response = await api.post('/auth/login', { email, password });
       const newToken = response.data.token;
       setToken(newToken);
       localStorage.setItem('token', newToken);
@@ -47,14 +47,14 @@ export const AuthProvider = ({ children }) => {
       setUser(userResponse.data);
       return { success: true };
     } catch (error) {
-        console.error("Login failed", error);
+      console.error("Login failed", error);
       return { success: false, error: error.response?.data?.message || 'Login failed' };
     }
   };
 
-  const register = async (username, password) => {
+  const register = async (name, email, password) => {
     try {
-      const response = await api.post('/auth/register', { username, password });
+      const response = await api.post('/auth/register', { name, email, password });
       const newToken = response.data.token;
       setToken(newToken);
       localStorage.setItem('token', newToken);

@@ -27,16 +27,16 @@ public class UserController {
         }
 
         Object principal = authentication.getPrincipal(); // This is likely UserDetails from my Config
-        String username;
+        String email;
         if (principal instanceof UserDetails) {
-            username = ((UserDetails) principal).getUsername();
+            email = ((UserDetails) principal).getUsername(); // This holds email now
         } else {
-            username = principal.toString();
+            email = principal.toString();
         }
 
-        User user = userService.findByUsername(username)
+        User user = userService.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        // Don't send password?
+        // Don't send password
         user.setPassword(null);
         return ResponseEntity.ok(user);
     }
