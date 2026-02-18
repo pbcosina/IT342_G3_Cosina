@@ -1,83 +1,126 @@
+/* ===== Design System ===== */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* Colors */
+  --color-bg: #F0EADF;
+  --color-blue: #9BABB8;
+  --color-button: #967E76;
+  --color-about-box: #baaaa0;
+  --color-text-dark: #2c2c2c;
+  --color-text-light: #ffffff;
+
+  /* Typography */
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  /* Rendering */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+*,
+*::before,
+*::after {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-input {
-  border-radius: 8px;
-  border: 1px solid #444;
-  padding: 0.6em;
-  font-size: 1em;
-  background-color: #333;
-  color: white;
-  margin-bottom: 1em;
-  display: block;
-  width: 100%;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.card {
-  padding: 2em;
-  background-color: #333;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  font-family: 'Poppins', system-ui, sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ===== Auth Pages Shared Styles ===== */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2em;
 }
+
 .form-container {
-    max-width: 400px;
-    margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto;
 }
-a {
-    color: #646cff;
-    text-decoration: none;
+
+.card {
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
-a:hover {
-    text-decoration: underline;
+
+input {
+  border-radius: 8px;
+  border: 1px solid #d4cfc8;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: #fff;
+  color: var(--color-text-dark);
+  margin-bottom: 1em;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(155, 171, 184, 0.2);
 }
