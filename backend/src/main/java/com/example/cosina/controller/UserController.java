@@ -2,7 +2,6 @@ package com.example.cosina.controller;
 
 import com.example.cosina.model.User;
 import com.example.cosina.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,10 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/user")
-@RequiredArgsConstructor
 public class UserController {
 
-    private final UserRepository userService; // Using Repo directly or Service
+    private final UserRepository userService;
+
+    public UserController(UserRepository userService) {
+        this.userService = userService;
+    } // Using Repo directly or Service
 
     @GetMapping("/me")
     public ResponseEntity<User> getCurrentUser() {

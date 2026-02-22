@@ -1,18 +1,22 @@
 # Project Task Checklist
 
 ## DONE
-- [x] Create project structure (folders: web, backend, mobile, docs) (Commit: 7ce8fc7)
-- [x] Initialize README.md (Commit: 7ce8fc7)
-- [x] Initialize Spring Boot Backend (Manual setup) (Commit: 7ce8fc7)
-- [x] Initialize ReactJS Frontend (Vite) (Commit: 7ce8fc7)
-- [x] Implement Backend Auth (Register, Login, Me, JWT) (Commit: 7ce8fc7)
-- [x] Implement Frontend Pages (Landing, Login, Register, Dashboard) (Commit: 7ce8fc7)
-- [x] Connect Frontend to Backend (via Axios & Proxy config) (Commit: 7ce8fc7)
+- [x] Create project structure (folders: web, backend, mobile, docs)
+- [x] Initialize README.md
+- [x] Initialize Spring Boot Backend
+- [x] Initialize ReactJS Frontend
+- [x] Implement Backend Auth (Register, Login, Me, JWT)
+- [x] Implement Frontend Pages (Landing, Login, Register, Dashboard) 
+- [x] Connect Frontend to Backend (via Axios & Proxy config)
 
 ## IN-PROGRESS
-- [ ] Refine Styles (User to edit later)
+- [ ] Refine Styles
 - [ ] Add Form Validation
+- [ ] Confirmation Messages
 
 ## TODO
 - [ ] Mobile App Development
 - [ ] User Profile Management
+- [ ] Causes Screen
+- [ ] Fundraise Screen
+- [ ] Account Settings

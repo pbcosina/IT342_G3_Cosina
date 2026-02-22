@@ -1,7 +1,7 @@
 package com.example.cosina.config;
 
 import com.example.cosina.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,10 +14,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@RequiredArgsConstructor
 public class ApplicationConfig {
 
     private final UserRepository repository;
+
+    public ApplicationConfig(UserRepository repository) {
+        this.repository = repository;
+    }
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -25,7 +28,7 @@ public class ApplicationConfig {
                 .map(user -> org.springframework.security.core.userdetails.User.builder()
                 .username(user.getEmail())
                 .password(user.getPassword()) // Encoded password
-                .authorities(user.getRole() != null ? user.getRole() : "ROLE_USER")
+                .authorities("ROLE_USER")
                 .build())
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
