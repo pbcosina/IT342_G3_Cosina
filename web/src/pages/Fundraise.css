@@ -9,7 +9,7 @@
 .list-header h2 {
     font-size: 2rem;
     color: #1a1a1a;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .start-btn {
@@ -80,7 +80,7 @@
 
 .who-for-view h2 {
     font-size: 2.5rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #1a1a1a;
     margin-bottom: 0.5rem;
 }
@@ -128,7 +128,7 @@
 .who-for-text h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .who-for-text p {
@@ -164,7 +164,7 @@
 
 .fundraise-form-view h2 {
     font-size: 2rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 2rem;
     color: #1a1a1a;
 }
@@ -206,7 +206,7 @@
     font-size: 1rem;
     outline: none;
     transition: border-color 0.2s;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .form-group input:focus,
