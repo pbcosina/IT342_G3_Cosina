@@ -18,8 +18,37 @@ const Settings = () => {
                 <div className="settings-body">
                     <h1 className="settings-title">Settings</h1>
                     <p className="settings-subtitle">Manage your account preferences and profile details.</p>
-                    <div className="settings-card">
-                        <p>Settings options will appear here.</p>
+
+                    <div className="settings-section">
+                        <div className="settings-section-title">Profile</div>
+                        <div className="settings-card">
+                            <div className="settings-row">
+                                <span className="settings-row-label">Name</span>
+                                <span className="settings-row-value">{user?.name || '—'}</span>
+                            </div>
+                            <div className="settings-row">
+                                <span className="settings-row-label">Email</span>
+                                <span className="settings-row-value">{user?.email || '—'}</span>
+                            </div>
+                            <div className="settings-row">
+                                <span className="settings-row-label">Password</span>
+                                <button className="settings-row-action">Change password</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="settings-section">
+                        <div className="settings-section-title">Account</div>
+                        <div className="settings-card">
+                            <div className="settings-row">
+                                <span className="settings-row-label">Notifications</span>
+                                <button className="settings-row-action">Manage</button>
+                            </div>
+                            <div className="settings-row">
+                                <span className="settings-row-label">Delete account</span>
+                                <button className="settings-row-action" style={{ color: '#b91c1c' }}>Delete</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>

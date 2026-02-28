@@ -1,4 +1,121 @@
 /* Styles for Fundraise page */
+
+/* ─── Shared Layout ───────────────────────────────────── */
+.causes-layout {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(#c9d1d3 0 70px, #f5f1e3 70px);
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-content.causes-main {
+    margin-left: 260px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.top-header {
+    height: 70px;
+    background-color: #c9d1d3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.user-avatar-placeholder {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    background: linear-gradient(135deg, #9fb1bc, #7a93a5);
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.6);
+    box-shadow: 0 2px 8px rgba(45,49,66,0.15);
+}
+
+.content-body {
+    padding: 2.5rem 3rem;
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    animation: fadeInUp 0.45s ease-out both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Cause cards (used in fundraise list) ────────────── */
+.causes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.6rem;
+    padding-bottom: 4rem;
+}
+
+.cause-card {
+    background: #fff;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px rgba(45,49,66,0.07);
+    border: 1px solid rgba(159,177,188,0.18);
+}
+
+.cause-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(45,49,66,0.12);
+}
+
+.cause-image {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-color: #d1dce3;
+    flex-shrink: 0;
+}
+
+.cause-info {
+    padding: 1.1rem 1.3rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.3rem;
+}
+
+.cause-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.cause-snippet {
+    margin: 0;
+    color: #5c677d;
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+/* ─── Fundraise-specific styles ───────────────────────── */
 .list-header {
     display: flex;
     justify-content: space-between;
@@ -7,40 +124,48 @@
 }
 
 .list-header h2 {
-    font-size: 2rem;
-    color: #1a1a1a;
+    font-size: 1.55rem;
+    color: #2d3142;
     font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .start-btn {
-    background-color: #1a1a1a;
-    color: white;
+    background: #2d3142;
+    color: #fff;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 12px;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 14px rgba(45,49,66,0.22);
+    font-size: 0.9rem;
 }
 
 .start-btn:hover {
     transform: translateY(-2px);
-    background-color: #333;
+    background: #1a1f30;
+    box-shadow: 0 8px 22px rgba(45,49,66,0.32);
 }
 
 .empty-state {
     text-align: center;
-    padding: 4rem;
-    background: #e2e8f0;
-    border-radius: 16px;
-    color: #4a5568;
-    font-size: 1.1rem;
+    padding: 4rem 2rem;
+    background: #fff;
+    border-radius: 1.2rem;
+    color: #2d3142;
+    font-size: 1rem;
+    border: 1.5px dashed #cbd5e1;
+    box-shadow: 0 2px 12px rgba(45,49,66,0.05);
 }
 
 .card-actions {
     display: flex;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 0.9rem;
 }
 
 .card-actions button {
@@ -49,22 +174,28 @@
     border: none;
     border-radius: 8px;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.card-actions button:hover {
+    transform: translateY(-1px);
 }
 
 .edit-btn {
-    background-color: #9eb1bd;
-    color: white;
+    background-color: #4f5d75;
+    color: #fff;
 }
 
 .edit-btn:hover {
-    background-color: #7a93a5;
+    background-color: #3a4560;
 }
 
 .delete-btn {
     background-color: #fecaca;
-    color: #dc2626;
+    color: #7f1d1d;
 }
 
 .delete-btn:hover {
@@ -72,23 +203,31 @@
 }
 
 .who-for-view {
-    max-width: 800px;
+    max-width: 820px;
     margin: 0 auto;
     text-align: center;
     padding: 2rem 0;
+    animation: fadeInUp 0.4s ease-out both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .who-for-view h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: 'Poppins', sans-serif;
-    color: #1a1a1a;
+    color: #2d3142;
+    font-weight: 700;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
 }
 
 .who-for-view .subtitle {
-    color: #4a5568;
+    color: #5c677d;
     margin-bottom: 3rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .who-for-options {
@@ -99,29 +238,31 @@
 }
 
 .who-for-card {
-    background: #e2e8f0;
-    border-radius: 24px;
-    padding: 2rem;
-    width: 250px;
+    background: #fff;
+    border-radius: 1.2rem;
+    padding: 1.8rem 1.6rem;
+    width: 240px;
     text-align: left;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
     display: flex;
     gap: 1rem;
     align-items: flex-start;
+    box-shadow: 0 2px 12px rgba(45,49,66,0.07);
+    border: 1.5px solid rgba(159,177,188,0.18);
 }
 
 .who-for-card:hover {
     transform: translateY(-5px);
-    background: #cbd5e1;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 12px 32px rgba(45,49,66,0.14);
+    border-color: #9fb1bc;
 }
 
 .icon-placeholder {
     width: 40px;
     height: 40px;
-    background: #94a3b8;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #9fb1bc, #7a93a5);
+    border-radius: 10px;
     flex-shrink: 0;
 }
 
@@ -154,19 +295,23 @@
 }
 
 .fundraise-form-view {
-    max-width: 800px;
+    max-width: 820px;
     background: #fff;
-    border-radius: 24px;
-    padding: 3rem;
+    border-radius: 1.5rem;
+    padding: 2.5rem 3rem;
     margin: 0 auto;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px rgba(45,49,66,0.1);
+    border: 1px solid rgba(159,177,188,0.18);
+    animation: fadeInUp 0.4s ease-out both;
 }
 
 .fundraise-form-view h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     margin-bottom: 2rem;
-    color: #1a1a1a;
+    color: #2d3142;
+    letter-spacing: -0.01em;
 }
 
 .fundraise-form {
@@ -200,36 +345,43 @@
 
 .form-group input,
 .form-group textarea {
-    padding: 1rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.93rem;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
     font-family: 'Poppins', sans-serif;
+    background: #fafbfc;
+    color: #2d3142;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #9eb1bd;
+    border-color: #9fb1bc;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(159,177,188,0.18);
 }
 
 .preview-btn {
-    background-color: #1a1a1a;
-    color: white;
+    background: #2d3142;
+    color: #fff;
     border: none;
-    padding: 1rem;
+    padding: 0.9rem;
     border-radius: 12px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     margin-top: 1rem;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 14px rgba(45,49,66,0.22);
 }
 
 .preview-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #1a1f30;
+    box-shadow: 0 8px 22px rgba(45,49,66,0.32);
 }
 
 .preview-view {
@@ -280,23 +432,28 @@
 }
 
 .publish-btn {
-    background: #059669;
+    background: #047857;
     border: none;
-    color: white;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 14px rgba(4,120,87,0.28);
 }
 
 .publish-btn:hover {
-    background: #047857;
+    background: #065f46;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+    box-shadow: 0 8px 22px rgba(4,120,87,0.38);
 }
 
 .fundraise-message {
-    background: #d1fae5;
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
     color: #065f46;
-    padding: 1rem;
+    padding: 0.9rem 1.2rem;
     border-radius: 12px;
     margin-bottom: 2rem;
     text-align: center;
     font-weight: 600;
+    font-size: 0.92rem;
+    border: 1px solid #6ee7b7;
+    box-shadow: 0 2px 8px rgba(5,150,105,0.1);
 }

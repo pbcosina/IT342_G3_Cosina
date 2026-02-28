@@ -45,6 +45,9 @@ const Causes = () => {
                 <div className="content-body">
                     <div className="search-container">
                         <div className="search-bar-wrapper">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#7d8597" style={{ flexShrink: 0 }}>
+                                <path d="M11 3a8 8 0 1 0 4.9 14.3l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0 0 11 3zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z" />
+                            </svg>
                             <input
                                 type="text"
                                 className="search-input"
@@ -55,22 +58,25 @@ const Causes = () => {
                         </div>
                     </div>
 
+                    <h2 className="causes-page-title">Browse Causes</h2>
                     <div className="causes-grid">
-                        {causes.length === 0 ? <p>No causes found.</p> : causes.map(cause => (
-                            <div className="cause-card" key={cause.id} onClick={() => navigate(`/causes/${cause.id}`)}>
-                                <div
-                                    className="cause-image"
-                                    style={{ backgroundImage: `url(${cause.imageUrl || 'https://via.placeholder.com/300'})` }}
-                                ></div>
-                                <div className="cause-info">
-                                    <h3 className="cause-title">{cause.title}</h3>
-                                    <p className="cause-snippet">
-                                        {cause.story ? cause.story.substring(0, 60) + '...' : 'No description'}
-                                    </p>
-                                    <p className="cause-author">{cause.authorName}</p>
+                        {causes.length === 0
+                            ? <p className="no-causes-msg">No causes found.</p>
+                            : causes.map(cause => (
+                                <div className="cause-card" key={cause.id} onClick={() => navigate(`/causes/${cause.id}`)}>
+                                    <div
+                                        className="cause-image"
+                                        style={{ backgroundImage: `url(${cause.imageUrl || 'https://via.placeholder.com/300'})` }}
+                                    ></div>
+                                    <div className="cause-info">
+                                        <h3 className="cause-title">{cause.title}</h3>
+                                        <p className="cause-snippet">
+                                            {cause.story ? cause.story.substring(0, 80) + '...' : 'No description'}
+                                        </p>
+                                        <p className="cause-author">{cause.authorName}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
                     </div>
                 </div>
             </main>

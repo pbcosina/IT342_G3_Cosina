@@ -77,6 +77,11 @@ const Dashboard = () => {
                 </header>
 
                 <div className="content-body">
+                    <div className="dashboard-welcome">
+                        <h1>Welcome back, {user?.name}!</h1>
+                        <p>Explore causes and start making a difference today.</p>
+                    </div>
+
                     <div className="search-container">
                         <div className="search-bar-wrapper">
                             <div className="search-icon-box" aria-hidden="true">
@@ -94,9 +99,22 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="dashboard-welcome">
-                        <h1>Welcome back, {user?.name}!</h1>
-                        <p>Explore causes and start making a difference today.</p>
+                    <div className="quick-stats">
+                        <div className="stat-card">
+                            <span className="stat-card-label">Platform</span>
+                            <span className="stat-card-value">Altru</span>
+                            <span className="stat-card-sub">Built for good</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-card-label">Your Causes</span>
+                            <span className="stat-card-value">—</span>
+                            <span className="stat-card-sub">Go to Fundraise</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-card-label">Explore</span>
+                            <span className="stat-card-value">—</span>
+                            <span className="stat-card-sub">Browse all causes</span>
+                        </div>
                     </div>
                 </div>
             </main>
