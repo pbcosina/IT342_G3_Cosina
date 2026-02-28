@@ -39,3 +39,10 @@ Altru is a purpose-driven donation platform built to make charitable giving more
    - Body: `{ "username": "user", "password": "password" }`
 - **GET** `/api/user/me` - Retrieve current user details (Protected).
    - Headers: `Authorization: Bearer <token>`
+- **GET** `/api/causes` - Retrieve list of published causes.
+- **GET** `/api/causes/{id}` - Retrieve details of a specific cause.
+- **GET** `/api/causes/my` - Retrieve list of current user's fundraises.
+- **POST** `/api/causes` - Create a new fundraise.
+- **PUT** `/api/causes/{id}` - Update a fundraise.
+- **DELETE** `/api/causes/{id}` - Delete a fundraise.
+- **POST** `/api/causes/{id}/donate` - Donate to a cause.
