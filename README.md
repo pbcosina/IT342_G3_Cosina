@@ -33,12 +33,12 @@ Altru is a purpose-driven donation platform built to make charitable giving more
 5. Open your browser at `http://localhost:5173`.
 
 ## List of API Endpoints
+### User Registration and Authentication
 - **POST** `/api/auth/register` - Register a new user.
-   - Body: `{ "username": "user", "password": "password" }`
 - **POST** `/api/auth/login` - Authenticate a user and receive a token.
-   - Body: `{ "username": "user", "password": "password" }`
 - **GET** `/api/user/me` - Retrieve current user details (Protected).
-   - Headers: `Authorization: Bearer <token>`
+
+### Causes and Fundraising
 - **GET** `/api/causes` - Retrieve list of published causes.
 - **GET** `/api/causes/{id}` - Retrieve details of a specific cause.
 - **GET** `/api/causes/my` - Retrieve list of current user's fundraises.

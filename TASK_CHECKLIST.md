@@ -16,6 +16,7 @@
 - [ ] Confirmation Messages
 
 ## TODO
+- [ ] Integrate Payment Gateway
 - [ ] Mobile App Development
 - [ ] User Profile Management
 - [ ] Account Settings
